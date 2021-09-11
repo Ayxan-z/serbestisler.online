@@ -6,6 +6,7 @@ from blog.models import CategoryModel, ArticleModel, CommentModel, ContactModel
 admin.site.register(CategoryModel)
 
 # ArticleModel **********************************************
+@admin.register(ArticleModel)
 class ArticleAdmin(admin.ModelAdmin):
     search_fields = (
         'title', 'content'
@@ -15,9 +16,8 @@ class ArticleAdmin(admin.ModelAdmin):
         'title', 'creation_date', 'arrangement_date'
     )
 
-admin.site.register(ArticleModel, ArticleAdmin)
-
 # CommentModel **********************************************
+@admin.register(CommentModel)
 class CommentAdmin(admin.ModelAdmin):
     search_fields = (
         'author__username',
@@ -26,9 +26,8 @@ class CommentAdmin(admin.ModelAdmin):
         'author', 'creation_date', 'arrangement_date'
     )
 
-admin.site.register(CommentModel, CommentAdmin)
-
 # ContactModel **********************************************
+@admin.register(ContactModel)
 class ContactAdmin(admin.ModelAdmin):
     search_fields = (
         'email',
@@ -36,5 +35,3 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = (
         'email', 'creation_date'
     )
-
-admin.site.register(ContactModel, ContactAdmin)
