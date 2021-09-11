@@ -2,9 +2,10 @@ from django.contrib import admin
 from blog import models
 from blog.models import CategoryModel, ArticleModel, CommentModel, ContactModel
 
+# CategoryModel **********************************************
 admin.site.register(CategoryModel)
 
-
+# ArticleModel **********************************************
 class ArticleAdmin(admin.ModelAdmin):
     search_fields = (
         'title', 'content'
@@ -16,7 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(ArticleModel, ArticleAdmin)
 
-
+# CommentModel **********************************************
 class CommentAdmin(admin.ModelAdmin):
     search_fields = (
         'author__username',
@@ -27,7 +28,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(CommentModel, CommentAdmin)
 
-
+# ContactModel **********************************************
 class ContactAdmin(admin.ModelAdmin):
     search_fields = (
         'email',
