@@ -14,7 +14,16 @@
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
         <p class="card-text">{{article.content|safe}}</p>
-        <p class="card-text"><small class="text-muted">{{article.arrangement_date|timesince}} əvvəl paylaşıldı</small></p>
+        <p class="card-text">
+          <small class="text-muted">{{article.arrangement_date|timesince}} əvvəl paylaşıldı</small>
+          
+          {% if request.user == article.author %}
+          <br>
+          <a class="btn btn-primary mt-4" href="{% url 'update-article' article.slug %}">Update</a>
+          <a class="btn btn-danger mt-4" href="{% url 'delete-article' article.slug %}">Delete</a>
+          {% endif %}
+            
+        </p>
       </div>
     </div>
   </div>

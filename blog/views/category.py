@@ -5,7 +5,6 @@ from django.core.paginator import Paginator
 def category(request, categorySlug):
     category = get_object_or_404(CategoryModel, slug=categorySlug)
     articles = category.article.order_by('-id')
-    # articles = ArticleModel.objects.order_by('-id')
     page = request.GET.get('page')
     paginator = Paginator(articles, 3)
 

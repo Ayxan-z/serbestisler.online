@@ -18,7 +18,12 @@
       <th scope="row">{{article.id}}</th>
       <td>{{article.title}}</td>
       <td>{{article.arrangement_date}}</td>
-      <td>Actions will come</td>
+      <td>
+        <p>
+          <a class="btn btn-primary mr-4" href="{% url 'update-article' article.slug %}">Update</a>
+          <a class="btn btn-danger" href="{% url 'delete-article' article.slug %}">Delete</a>
+        </p>
+      </td>
     </tr>
     {% empty %}
     <p>No article found</p>
