@@ -5,6 +5,12 @@
 
 {% block content %}
 
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" values="send">
+</form>
+
 {% endblock content %}
     
 
