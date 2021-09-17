@@ -33,5 +33,5 @@ class ContactAdmin(admin.ModelAdmin):
         'email',
     )
     list_display = (
-        'email', 'creation_date'
+        'name_surname','email', 'creation_date'
     )
