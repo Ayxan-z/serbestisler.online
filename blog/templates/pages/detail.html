@@ -56,6 +56,13 @@
     <div>
       <h5 class="card-title">{{comment.author.username}}</h5>
       <p class="card-text">{{comment.comment}}</p>
+      
+      {% if request.user == comment.author or request.user == article.author %}
+        <p>
+          <a class="btn btn-danger mt-5" href="{% url 'delete-comment' comment.id %}">Delete Comment</a>
+        </p>
+      {% endif %}
+        
     </div>
   </div>
 </div>
