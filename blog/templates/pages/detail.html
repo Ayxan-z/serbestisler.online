@@ -33,11 +33,22 @@
 <h5 class="mt-5 mb-3">Comments</h5>
 
 {% if request.user.is_authenticated %}
-  <form method="POST">
+  <form method="POST" class="mb-3">
     {% csrf_token %}
     {{add_comment_form|crispy}}
     <input type="submit" value="Send" class="btn btn-primary">
   </form>
+  {% if messages %}
+  {% for message in messages %}
+            
+    {% if message.tags == "info" %}
+      <div class="alert alert-danger">{{ message }}</div>
+    {% else %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endif %}
+
+  {% endfor %}
+{% endif %}
 {% else %}
   <p>You must login to comment</p>
 {% endif %}
