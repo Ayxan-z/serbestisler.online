@@ -22,5 +22,16 @@
         <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+      {% if request.user.is_authenticated == False %}
+      <ul class="navbar-nav" style="margin-left: 4rem;">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+      </ul>
+      {% endif %}
+      
     </div>
   </nav>

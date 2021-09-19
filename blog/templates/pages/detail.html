@@ -38,17 +38,9 @@
     {{add_comment_form|crispy}}
     <input type="submit" value="Send" class="btn btn-primary">
   </form>
-  {% if messages %}
-  {% for message in messages %}
-            
-    {% if message.tags == "info" %}
-      <div class="alert alert-danger">{{ message }}</div>
-    {% else %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-    {% endif %}
+  
+  {% include 'components/message.html' %}
 
-  {% endfor %}
-{% endif %}
 {% else %}
   <p>You must login to comment</p>
 {% endif %}
@@ -59,7 +51,7 @@
   <div class="card-body" style="display:flex;flex-direction:row;">
     <div>
       {% if comment.author.avatar %}
-        <img src="{{comment.author.avatar.url}}" class="rounded pt-4" style="margin-right: 2rem;" width="75px" height="75px">  
+        <img src="{{comment.author.avatar.url}}" class="rounded pt-4" style="margin-right: 2rem;" width="85px" height="85px">  
       {% else %}
         <img src="{% static 'image/no.avatar.jpg' %}" class="rounded pt-4" style="margin-right: 2rem;" width="87px" height="88px">
       {% endif %}

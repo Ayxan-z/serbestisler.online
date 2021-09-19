@@ -20,12 +20,14 @@
     </div>
     <div class="container" style="min-height: calc(100vh - 135.61px);">
         <div class="row">
-            <div class='col-sm-9'>
+            <div {% if request.user.is_authenticated %} class='col-sm-9' {% else %} class='col-12' {% endif %}>
 
                 {% block content %}{% endblock content %}
                 
             </div>
-            {% include "components/sidebar.html" %}
+            {% if request.user.is_authenticated %}
+              {% include "components/sidebar.html" %}
+            {% endif %}
         </div>
 
     </div>
