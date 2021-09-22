@@ -7,6 +7,9 @@ urlpatterns = [
     path('about', TemplateView.as_view(
         template_name='pages/about.html'
         ), name='about'),
+    path('email-sent', TemplateView.as_view(
+        template_name='pages/email-sent.html'
+        ), name='email-sent'),
     # path('redirect', RedirectView.as_view(
     #     url='https://www.google.com'
     #     ), name='redirect'),
