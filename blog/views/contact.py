@@ -1,8 +1,17 @@
-from django.shortcuts import render, redirect
 from blog.forms import ContactForm
-from blog.models import ContactModel
+from django.views.generic import FormView
 
-def contact(request):
+class ContactFormView(FormView):
+    template_name = 'pages/contact.html'
+    form_class = ContactForm
+    success_url = '/contact/email-sent'
+    
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+    
+
+'''def contact(request):
     form = ContactForm() 
     
     if request.method == 'POST':
@@ -16,5 +25,5 @@ def contact(request):
         else:
             print('no valid')
         
-    return render(request, 'pages/contact.html', context={"form": form})
+    return render(request, 'pages/contact.html', context={"form": form})'''
 
