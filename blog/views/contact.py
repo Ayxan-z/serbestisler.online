@@ -8,6 +8,7 @@ class ContactFormView(FormView):
     
     def form_valid(self, form):
         form.save()
+        form.send_email(message=form.cleaned_data.get('message'))
         return super().form_valid(form)
     
 
