@@ -3,6 +3,9 @@ from django.shortcuts import get_object_or_404, redirect, render
 from blog.models import ArticleModel
 from blog.forms import CommentAddModelForm
 from django.views import View
+import logging
+
+logger = logging.getLogger('article_read')
 
 class DetailView(View):
     http_method_names = ['get', 'post']
@@ -10,6 +13,10 @@ class DetailView(View):
     
     def get(self, request, slug):
         article = get_object_or_404(ArticleModel, slug=slug)
+        
+        if request.user.is_authenticated:
+            logger.info('article read: ' + request.user.username)
+        
         comments = article.comments.order_by('-id')
 
         return render(request, 'pages/detail.html', context={

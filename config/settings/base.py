@@ -106,3 +106,32 @@ EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = 'shahsuvarovayxan@gmail.com'
 EMAIL_HOST_USER = 'shahsuvarovayxan@gmail.com'
 EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple_expression': {
+            'format': '{asctime} {levelname} {message} {name}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/article_read.log',
+            'formatter': 'simple_expression',
+        },
+    },
+    'loggers': {
+        'article_read': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+    },
+}
+
