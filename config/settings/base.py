@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # third party
     'ckeditor',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,7 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
+
+
+
+

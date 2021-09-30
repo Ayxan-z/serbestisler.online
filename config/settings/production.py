@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['www.ayxan.shahsuvarov.com']
+ALLOWED_HOSTS = ['www.ayxan.shahsuvarov.com', '127.0.0.1']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -32,4 +32,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'prod.sqlite3',
     }
 }
+
+
+AWS_ACCESS_KEY_ID = env('ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'ayxanshahsuvarovs3'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'config.storage_backend.MediaStorage'
 
