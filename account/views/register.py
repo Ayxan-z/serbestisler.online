@@ -13,7 +13,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             
-            messages.success(request, 'Profile created')
+            messages.success(request, 'Sistemə giriş edildi')
             return redirect('homepage')
             
     else:

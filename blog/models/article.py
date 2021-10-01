@@ -5,11 +5,11 @@ from ckeditor.fields import RichTextField, RichTextField
 from blog.models.abstract_models import DateAbstractModel
 
 class ArticleModel(DateAbstractModel):
-    image = models.ImageField(upload_to="article_image")
-    title = models.CharField(max_length=50)
-    content = RichTextField()
+    image = models.ImageField('Şəkil', upload_to="article_image")
+    title = models.CharField('Başlıq',max_length=50)
+    content = RichTextField('Məzmun')
     slug = AutoSlugField(populate_from='title', unique=True)
-    categories = models.ManyToManyField(CategoryModel, related_name='article')
+    categories = models.ManyToManyField(CategoryModel, related_name='article', verbose_name='Kateqoriyalar')
     author = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='articles')
     
     class Meta:

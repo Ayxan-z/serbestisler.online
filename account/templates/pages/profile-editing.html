@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 
-{% block title %} Profile Editing {% endblock title %}
+{% block title %} Profil Güncəllə {% endblock title %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
     {% csrf_token %}
     {{form.media}}
     {{form|crispy}}
-    <input type="submit" value="Profile Editing" class="btn btn-primary mt-3 mb-5">
+    <input type="submit" value="Profili Güncəllə" class="btn btn-primary mt-3 mb-5">
 </form>
 
 {% endblock content %}

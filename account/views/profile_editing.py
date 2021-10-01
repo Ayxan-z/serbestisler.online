@@ -10,7 +10,7 @@ def profile_editing(request):
         if form.is_valid():
             form.save()
 
-            messages.success(request, 'Profile updated')
+            messages.success(request, 'Profil güncəlləndi')
             return redirect('homepage')
         
     else:

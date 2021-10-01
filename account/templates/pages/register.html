@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 
-{% block title %} Sign up {% endblock title %}
+{% block title %} Qeydiyyat {% endblock title %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
     {% csrf_token %}
     {{form.media}}
     {{form|crispy}}
-    <input type="submit" value="Sign up" class="btn btn-primary mt-3 mb-5">
+    <input type="submit" value="Qeydiyyat" class="btn btn-primary mt-3 mb-5">
 </form>
 
 {% endblock content %}

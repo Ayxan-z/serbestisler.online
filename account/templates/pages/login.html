@@ -2,14 +2,14 @@
 {% load crispy_forms_tags %}
 
 
-{% block title %} Login {% endblock title %}
+{% block title %} Daxil Ol {% endblock title %}
 
 {% block content %}
 
 <form method="POST">
     {% csrf_token %}
     {{form|crispy}}
-    <input type="submit" value="Login" class="btn btn-primary mt-3 mb-5">
+    <input type="submit" value="Daxil Ol" class="btn btn-primary mt-3 mb-5">
 </form>
 
 {% endblock content %}
