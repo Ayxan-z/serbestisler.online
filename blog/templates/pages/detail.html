@@ -57,13 +57,13 @@
   <div class="card-body" style="display:flex;flex-direction:row;">
     <div>
       {% if comment.author.avatar %}
-        <img src="{{comment.author.avatar.url}}" class="rounded pt-4" style="margin-right: 2rem;" width="85px" height="85px">  
+        <img src="{{comment.author.avatar.url}}" class="rounded pt-4" style="margin-right: 2rem;" width="80px" height="auto">  
       {% else %}
-        <img src="{% static 'image/no.avatar.jpg' %}" class="rounded pt-4" style="margin-right: 2rem;" width="87px" height="88px">
+        <img src="{% static 'image/no.avatar.jpg' %}" class="rounded pt-4" style="margin-right: 2rem;" width="80px" height="auto">
       {% endif %}
     </div>
     <div>
-      <h5 class="card-title">{{comment.author.username}}</h5>
+      <h5 class="card-title"><a href="{% url 'profile' username=comment.author.username %}">{{comment.author.username}}</a></h5>
       <p class="card-text">{{comment.comment}}</p>
       
       {% if request.user == comment.author or request.user == article.author %}
