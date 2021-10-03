@@ -8,9 +8,10 @@
 
 <div class="card mb-3">
   <div class="row g-0">
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <img src="{{article.image.url}}" class="img-fluid rounded-start" alt="...">
-    </div>
+    </div> -->
+    
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
@@ -20,6 +21,8 @@
             {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
             Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
           </small>
+          <hr>
+          <a href="{{article.files.url}}" class="btn btn-success" download>Faylı yendir</a>
           
           {% if request.user == article.author %}
           <br>

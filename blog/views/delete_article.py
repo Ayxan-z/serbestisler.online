@@ -13,9 +13,4 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
         return article
     
 
-'''@login_required(login_url='/')
-def delete_article(request, slug):
-    get_object_or_404(ArticleModel, slug=slug, author=request.user).delete()
-
-    return redirect('myarticles')'''
     

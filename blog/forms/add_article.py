@@ -4,5 +4,5 @@ from blog.models import ArticleModel
 class ArticleAddModelForm(forms.ModelForm):
     class Meta:
         model = ArticleModel
-        fields = ('title', 'image', 'content', 'categories')
+        fields = ('title', 'files', 'content', 'categories')
 

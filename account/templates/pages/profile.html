@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block title %} {{profile.username}} {% endblock title %}
     
@@ -9,10 +9,28 @@
 <div class="card">
     <div class="card-body">
         <div class="card-text">
-            {% if profile.get_full_name == '' %}
-                Name Surname: None
+            {% if profile.avatar %}
+                <img src="{{profile.avatar.url}}" style="width: 150px; height: auto; margin-right: 4rem; float: left;">  
             {% else %}
-                Name Surname: {{profile.get_full_name}}
+                <img src="{% static 'image/no.avatar.jpg' %}" style="width: 150px; height: auto; margin-right: 4rem; float: left;">
+            {% endif %}
+
+            <h5>İstifadəçi Adı: <small>{{profile.username}}</small></h5>
+            
+            {% if profile.get_full_name == '' %}
+                <h5>Ad Soyad: <small>Qeyd Olunmayıb</small></h5>
+                {% if profile.email == '' %}
+                    <h5>Email: <small>Qeyd Olunmayıb</small></h5>
+                {% else %}
+                    <h5>Email: <small>{{profile.email}}</small></h5>
+                {% endif %}
+            {% else %}
+                <h5>Ad Soyad: <small>{{profile.get_full_name}}</small></h5>
+                {% if profile.email == '' %}
+                    <h5>Email: <small>Qeyd Olunmayıb</small></h5>
+                {% else %}
+                    <h5>Email: <small>{{profile.email}}</small></h5>
+                {% endif %}
             {% endif %}
         </div>
     </div>
