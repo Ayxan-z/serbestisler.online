@@ -22,6 +22,7 @@
             Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
           </small>
           <hr>
+          <p style="margin-bottom: 0.6rem;">{{article.files.name|cut:"files/"}}</p>
           <a href="{{article.files.url}}" class="btn btn-success" download>Faylı yendir</a>
           
           {% if request.user == article.author %}

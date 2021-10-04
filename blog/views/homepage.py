@@ -14,7 +14,7 @@ def homePage(request):
         ).distinct()
     
     page = request.GET.get('page')
-    paginator = Paginator(articles, 3)
+    paginator = Paginator(articles, 5)
 
     return render(request, 'pages/homepage.html', context={
         'articles': paginator.get_page(page)
