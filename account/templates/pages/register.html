@@ -10,7 +10,8 @@
     {% csrf_token %}
     {{form.media}}
     {{form|crispy}}
-    <input type="submit" value="Qeydiyyat" class="btn btn-primary mt-3 mb-5">
+    <input type="submit" value="Qeydiyyat" class="btn btn-primary mt-3 mb-3">
+    <p class="mb-5">Hesabınız vardı? <a href="{% url 'login' %}">daxil olun</a></p>
 </form>
 
 {% endblock content %}

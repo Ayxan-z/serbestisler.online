@@ -9,7 +9,8 @@
 <form method="POST">
     {% csrf_token %}
     {{form|crispy}}
-    <input type="submit" value="Daxil Ol" class="btn btn-primary mt-3 mb-5">
+    <input type="submit" value="Daxil Ol" class="btn btn-primary mt-3 mb-3">
+    <p class="mb-5">Hesabınız yoxdu? <a href="{% url 'register' %}">qeydiyyatdan keçin</a></p>
 </form>
 
 {% endblock content %}
