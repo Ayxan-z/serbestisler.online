@@ -19,10 +19,8 @@
       <td><a href="{% url 'detail' article.slug %}">{{article.title}}</a></td>
       <td>{{article.arrangement_date}}</td>
       <td>
-        <p>
-          <a class="btn btn-primary mr-4" href="{% url 'update-article' article.slug %}">Güncəllə</a>
-          <a class="btn btn-danger" href="{% url 'delete-article' article.slug %}">Sil</a>
-        </p>
+          <a class="btn btn-primary mr-4 mb-1" style="padding: 4px 10px 4px 10px;" href="{% url 'update-article' article.slug %}">Güncəllə</a>
+          <a class="btn btn-danger" style="padding: 4px 10px 4px 10px;" href="{% url 'delete-article' article.slug %}">Sil</a>
       </td>
     </tr>
     {% empty %}

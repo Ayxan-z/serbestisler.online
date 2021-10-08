@@ -6,22 +6,20 @@
 
 {% block content %}
     
-<div class="card">
+<div class="card mb-3">
     <div class="card-body">
-        <div class="card-text">
+        <div class="card-text mb-5" style="display: inline-block;">
             {% if profile.avatar %}
-                <img src="{{profile.avatar.url}}" style="width: 150px; height: auto; margin-right: 4rem; float: left;">  
+                <img src="{{profile.avatar.url}}" style="width: 150px; height: auto; float: left;">  
             {% else %}
-                <img src="{% static 'image/no.avatar.jpg' %}" style="width: 150px; height: auto; margin-right: 4rem; float: left;">
+                <img src="{% static 'image/no.avatar.jpg' %}" style="width: 150px; height: auto; float: left;">
             {% endif %}
-
-            <h5>İstifadəçi Adı: <small>{{profile.username}}</small></h5>
-            <h5>Ad Soyad: <small>{{profile.get_full_name|default:"Qeyd Olunmayıb"}}</small></h5>
-            <h5>Email: <small>{{profile.email|default:"Qeyd Olunmayıb"}}</small></h5>
-
-            <h5>Qatıldığı Tarix: <small>{{profile.date_joined}}</small></h5>
-            <h5>Son Giriş Tarixi: <small>{{profile.last_login}}</small></h5>            
         </div>
+        <h5>İstifadəçi Adı: <small>{{profile.username}}</small></h5>
+        <h5>Ad Soyad: <small>{{profile.get_full_name|default:"Qeyd Olunmayıb"}}</small></h5>
+        <h5>Email: <small>{{profile.email|default:"Qeyd Olunmayıb"}}</small></h5>
+        <h5>Qatıldığı Tarix: <small>{{profile.date_joined}}</small></h5>
+        <h5>Son Giriş Tarixi: <small>{{profile.last_login}}</small></h5> 
     </div>
 </div>
 

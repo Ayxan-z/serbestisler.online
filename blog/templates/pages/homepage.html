@@ -4,6 +4,10 @@
 
 
 {% block content %}
+<form action="{% url 'homepage' %}" class="form-inline my-2 mb-3">
+  <input class="form-control mr-sm-2" type="search" name="search" placeholder="Axtar" style="width: 210px;">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+</form>
 {% include 'components/message.html' %}
 
 {% for article in articles %}

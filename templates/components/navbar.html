@@ -1,6 +1,7 @@
 {% load category_list %}
 {% category_list as categories %}
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'homepage' %}">Ana Səyfə</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,12 +19,9 @@
         {% endfor %}
           
       </ul>
-      <form action="{% url 'homepage' %}" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Axtar" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
-      </form>
+      
       {% if request.user.is_authenticated == False %}
-      <ul class="navbar-nav" style="margin-left: 4rem;">
+      <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'register' %}">Qeydiyyat</a>
         </li>
