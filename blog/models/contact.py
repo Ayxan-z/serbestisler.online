@@ -2,8 +2,8 @@ from django.db import models
 
 class ContactModel(models.Model):
     email = models.EmailField(max_length=250)
-    name_surname = models.CharField(max_length=150)
-    message = models.TextField()
+    name_surname = models.CharField('Ad Soyad', max_length=150)
+    message = models.TextField('Mesaj')
     creation_date = models.DateTimeField(auto_now_add=True)
     
     class Meta:

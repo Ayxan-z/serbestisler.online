@@ -10,6 +10,12 @@
     {% csrf_token %}
     {{form.media}}
     {{form|crispy}}
+    <style>
+        .btn:hover {
+            background: #fff;
+            color: #0069D9;
+        }
+    </style>
     <input type="submit" value="Profili Güncəllə" class="btn btn-primary mt-3 mb-5">
 </form>
 

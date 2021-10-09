@@ -24,12 +24,34 @@
           </small>
           <hr>
           <p style="margin-bottom: 0.6rem;">{{article.files.name|cut:"files/"}}</p>
-          <a href="{{article.files.url}}" class="btn btn-success" download>Faylı yendir</a>
+          <style>
+            .download-file:hover {
+              background: #fff;
+              color: #218838;
+            }
+            .update-btn:hover {
+              background: #fff;
+              color: #0069D9;
+            }
+            .delete-btn:hover {
+              background: #fff;
+              color: #C82333;
+            }
+            .send-btn:hover {
+              background: #fff;
+              color: #0069D9;
+            }
+            .delete-comment-btn:hover {
+              background: #fff;
+              color: #C82333;
+            }
+          </style>
+          <a href="{{article.files.url}}" class="btn btn-success download-file" download>Faylı yendir</a>
           
           {% if request.user == article.author %}
           <br>
-          <a class="btn btn-primary mt-4" href="{% url 'update-article' article.slug %}">Güncəllə</a>
-          <a class="btn btn-danger mt-4" href="{% url 'delete-article' article.slug %}">Sil</a>
+          <a class="btn btn-primary mt-4 update-btn" href="{% url 'update-article' article.slug %}">Güncəllə</a>
+          <a class="btn btn-danger mt-4 delete-btn" href="{% url 'delete-article' article.slug %}">Sil</a>
           {% endif %}
             
         </p>
@@ -44,7 +66,7 @@
   <form method="POST" class="mb-3">
     {% csrf_token %}
     {{add_comment_form|crispy}}
-    <input type="submit" value="Göndər" class="btn btn-primary mt-3">
+    <input type="submit" value="Göndər" class="btn btn-primary mt-3 send-btn">
   </form>
   
   {% include 'components/message.html' %}
@@ -70,7 +92,7 @@
       
       {% if request.user == comment.author or request.user == article.author %}
         <p>
-          <a class="btn btn-danger mt-5" style="padding: 3px 9px; font-size: 13.5px;" href="{% url 'delete-comment' comment.id %}">Şərhi Sil</a>
+          <a class="btn btn-danger mt-5 delete-comment-btn" style="padding: 3px 9px; font-size: 13.5px;" href="{% url 'delete-comment' comment.id %}">Şərhi Sil</a>
         </p>
       {% endif %}
         

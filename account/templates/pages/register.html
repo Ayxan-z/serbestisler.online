@@ -10,6 +10,12 @@
     {% csrf_token %}
     {{form.media}}
     {{form|crispy}}
+    <style>
+        .btn:hover {
+            background: #fff;
+            color: #0069D9;
+        }
+    </style>
     <input type="submit" value="Qeydiyyat" class="btn btn-primary mt-3 mb-3">
     <p class="mb-5">Hesabınız vardı? <a href="{% url 'login' %}">daxil olun</a></p>
 </form>

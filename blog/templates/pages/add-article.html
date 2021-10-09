@@ -8,7 +8,13 @@
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
     {{form|crispy}}
-    <input type="submit" value="Əlavə Elə" class="btn btn-primary mt-3 mb-5">
+    <style>
+        .btn:hover {
+            background: #fff;
+            color: #218838;
+        }
+    </style>
+    <input type="submit" value="Əlavə Elə" class="btn btn-success mt-3 mb-5">
 </form>
 
 {% endblock content %}
