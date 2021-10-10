@@ -33,7 +33,7 @@
   </div>
   <p class="card-text"><small class="text-muted">{{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
     Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a></small></p>
-  <a href="{{article.files.url}}" style="color: blue;" download>Faylı yüklə</a>
+  <a href="{{article.files.url}}" style="color: blue; margin-bottom: 1rem;" download>Faylı yüklə</a>
 </div>
 {% empty %}
 <p>Fayl yoxdu</p>

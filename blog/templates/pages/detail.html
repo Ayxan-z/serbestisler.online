@@ -16,9 +16,10 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
+        <hr>
         <p class="card-text">{{article.content|safe}}</p>
         {{article.content.image}}
-        <p class="card-text">
+        <p class="card-text mt-3">
           <small class="text-muted">
             {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
             Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
@@ -105,7 +106,7 @@
   </div>
 </div>
 {% empty %}
-<p class="mt-3">Bu iş üçün şərh yoxdu</p>
+<p class="mt-3 mb-2"><b>Bu iş üçün şərh yoxdu</b></p>
 {% endfor %}
 
 {% endblock content %}
