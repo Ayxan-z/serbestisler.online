@@ -17,6 +17,7 @@
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
         <p class="card-text">{{article.content|safe}}</p>
+        {{article.content.image}}
         <p class="card-text">
           <small class="text-muted">
             {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
@@ -44,6 +45,10 @@
             .delete-comment-btn:hover {
               background: #fff;
               color: #C82333;
+            }
+            img {
+              max-width: 450px;
+              height: auto !important;
             }
           </style>
           <a href="{{article.files.url}}" class="btn btn-success download-file" download>Faylı yendir</a>

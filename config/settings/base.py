@@ -30,9 +30,12 @@ INSTALLED_APPS = [
     'account',
     # third party
     'ckeditor',
+    'ckeditor_uploader',
     'crispy_forms',
     'storages',
 ]
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,10 +85,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
-STATICFILES_DIRS = [
+'''STATICFILES_DIRS = [
     BASE_DIR / 'static'
-]
+]'''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -105,7 +109,8 @@ CKEDITOR_CONFIGS = {
         "width": "100%",
     },
 }
-
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_THUMBNAIL_SIZE = (300, 300)
 LOGIN_REDIRECT_URL = '/'
 
 

@@ -9,6 +9,7 @@ urlpatterns = [
     path('03.14/', admin.site.urls),
     path('account/', include('account.urls')),
     path('', include('blog.urls')),
+    path('ckeditor', include('ckeditor_uploader.urls'))
     # url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
