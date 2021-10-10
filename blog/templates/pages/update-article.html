@@ -8,6 +8,7 @@
 
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
+    {{form.media}}
     {{form|crispy}}
     <input type="submit" value="Update Artile" class="btn btn-primary mt-3 mb-5">
 </form>

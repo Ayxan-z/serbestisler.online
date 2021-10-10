@@ -7,6 +7,7 @@
 
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
+    {{form.media}}
     {{form|crispy}}
     <style>
         .btn:hover {

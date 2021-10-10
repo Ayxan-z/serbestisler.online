@@ -98,7 +98,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins': 'stylesheerparser',
+        "allowedContent": True,
+        "width": "100%",
+    },
+}
 LOGIN_REDIRECT_URL = '/'
 
 
