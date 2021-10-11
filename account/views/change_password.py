@@ -13,7 +13,7 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request, user)
             
-            messages.success(request, 'Şifrə dəyişdirildi')
+            messages.success(request, 'Parol dəyişdi')
             return redirect('homepage')
     
     else:

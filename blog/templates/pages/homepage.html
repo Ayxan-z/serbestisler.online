@@ -6,7 +6,7 @@
 {% block content %}
 <form action="{% url 'homepage' %}" class="form-inline my-2 mb-3">
   <input class="form-control mr-sm-2" type="search" name="search" placeholder="Axtar" style="width: 210px;">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
 </form>
 {% include 'components/message.html' %}
 
@@ -37,7 +37,7 @@
     {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
     Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
   </small></p>
-  <a href="{{article.files.url}}" style="color: blue; margin-left: 1.1rem; margin-bottom: 1rem;" download>Faylı yüklə</a>
+  <a href="{{article.files.url}}" style="color:rgb(0, 155, 0); margin-left: 1.1rem; margin-bottom: 1rem; margin-top: 6px;" download><i class="fa fa-download fa-lg"></i></a>
 </div>
 {% empty %}
 <p>Fayl tapılmadı</p>

@@ -24,6 +24,11 @@
             {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
             Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
           </small>
+          {% if request.user == article.author %}
+          <br>
+          <a class="btn mt-4 update-btn" style="padding-left: 0;" href="{% url 'update-article' article.slug %}"><i class="fa fa-edit fa-lg"></i></a>
+          <a class="btn mt-4 delete-btn" style="color: red;" href="{% url 'delete-article' article.slug %}"><i class="fa fa-trash fa-lg"></i></a>
+          {% endif %}
           <hr>
           <p style="margin-bottom: 0.6rem;">{{article.files.name|cut:"files/"}}</p>
           <style>
@@ -52,14 +57,7 @@
               height: auto !important;
             }
           </style>
-          <a href="{{article.files.url}}" class="btn btn-success download-file" download>Faylı yendir</a>
-          
-          {% if request.user == article.author %}
-          <br>
-          <a class="btn btn-primary mt-4 update-btn" href="{% url 'update-article' article.slug %}">Güncəllə</a>
-          <a class="btn btn-danger mt-4 delete-btn" href="{% url 'delete-article' article.slug %}">Sil</a>
-          {% endif %}
-            
+          <a href="{{article.files.url}}" class="btn btn-success download-file" download><i class="fa fa-download fa-lg"></i></a>
         </p>
       </div>
     </div>

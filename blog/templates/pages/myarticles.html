@@ -6,32 +6,23 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <!-- <th scope="col">id</th> -->
       <th scope="col">Başlıq</th>
       <th scope="col">Yenilənmə Tarixi</th>
-      <th scope="col">Tədbirlər</th>
+      <!-- <th scope="col">Tədbirlər</th> -->
     </tr>
   </thead>
   <tbody>
     {% for article in articles %}
     <tr>
-      <th scope="row">{{article.id}}</th>
-      <td><a href="{% url 'detail' article.slug %}">{{article.title}}</a></td>
-      <td>{{article.arrangement_date}}</td>
-      <style>
-        .update-btn:hover {
-            background: #fff;
-            color: #0069D9;
-        }
-        .delete-btn:hover {
-            background: #fff;
-            color: #C82333;
-        }
-    </style>
-      <td>
-          <a class="btn btn-primary mr-4 mb-1 update-btn" style="padding: 4px 10px 4px 10px;" href="{% url 'update-article' article.slug %}">Güncəllə</a>
-          <a class="btn btn-danger delete-btn" style="padding: 4px 10px 4px 10px;" href="{% url 'delete-article' article.slug %}">Sil</a>
+      <!-- <th scope="row">{{article.id}}</th> -->
+      <td style="max-width: 150px;">
+        <a href="{% url 'detail' article.slug %}">{{article.title}}</a>
+        <br><br>
+        <a class="btn mr-1 update-btn" style="padding: 0;" href="{% url 'update-article' article.slug %}"><i class="fa fa-edit fa-lg"></i></a>
+        <a class="btn delete-btn" style="color: red;" href="{% url 'delete-article' article.slug %}"><i class="fa fa-trash fa-lg"></i></a>
       </td>
+      <td style="max-width: 125px;">{{article.arrangement_date}}</td>
     </tr>
     {% empty %}
     <div class="alert alert-warning"><p>Sərbəst iş tapılmadı</p></div>

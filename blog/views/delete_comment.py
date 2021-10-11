@@ -10,7 +10,7 @@ def delete_comment(request, id):
     if comment.author == request.user or comment.article.author == request.user:
         comment.delete()
         
-        messages.success(request, 'Commnent deleted')
+        messages.success(request, 'Şərh silindi')
         return redirect('detail', slug=comment.article.slug)
     
     return redirect('homepage')

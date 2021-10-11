@@ -34,7 +34,7 @@ class DetailView(View):
             comment.author = request.user
             comment.article = article
             comment.save()
-            messages.success(request, 'Comment Added')
+            messages.success(request, 'Şərh əlavə olundu')
         
         return redirect('detail', slug=slug)
 
