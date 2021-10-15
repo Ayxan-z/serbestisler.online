@@ -10,7 +10,7 @@
     <div class="card-body">
         <div class="card-text mb-5" style="display: inline-block;">
             {% if profile.avatar %}
-                <img src="{{profile.avatar.url}}" style="width: 150px; height: auto; float: left;">  
+                <img src="{{profile.avatar.url}}" style="width: 25%; height: auto; float: left; object-fit: contain;">  
             {% else %}
                 <img src="{% static 'image/no.avatar.jpg' %}" style="width: 150px; height: auto; float: left;">
             {% endif %}
