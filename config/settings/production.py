@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['www.serbestisler.online', 'serbestisler.online', '127.0.0.1', '13.49.221.88']
+ALLOWED_HOSTS = ['www.serbestisler.online', 'serbestisler.online', '127.0.0.1', '13.49.226.105']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
