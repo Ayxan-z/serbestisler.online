@@ -1,0 +1,16 @@
+.m-1 {
+    border-radius: 100%;
+}
+
+footer {
+    height: 80px;
+    width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+section {
+    padding-top: 5px;
+}
