@@ -9,7 +9,7 @@ from blog.models.abstract_models import DateAbstractModel
 class ArticleModel(DateAbstractModel):
     # image = models.ImageField('Şəkil', upload_to="article_image")
     files = models.FileField('Fayl', upload_to='files')
-    title = models.CharField('Başlıq') # max_length=50
+    title = models.CharField('Başlıq', max_length=40)
     content = RichTextUploadingField('Açıqlama')
     slug = AutoSlugField(populate_from='title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='article', verbose_name='Kateqoriyalar')
