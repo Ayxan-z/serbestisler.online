@@ -14,8 +14,16 @@ class DetailView(View):
     def get(self, request, slug):
         article = get_object_or_404(ArticleModel, slug=slug)
         
+        articleRead = 'Unknown'
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+            
         if request.user.is_authenticated:
-            logger.info('article read: ' + request.user.username)
+            articleRead = request.user.username
+        logger.info(f'article: {article.title} article read: {articleRead} IP: {ip}')
         
         comments = article.comments.order_by('-id')
 
