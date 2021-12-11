@@ -1,9 +1,18 @@
 from .base import *
+from django.conf import settings
+from django import http
 
 ALLOWED_HOSTS = ['www.serbestisler.online', 'serbestisler.online', '127.0.0.1', '16.170.218.199']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# IP blocking
+BLOCKED_IPS = ('46.228.176.95',)
+class BlockedIpMiddleware(object):
+    def process_request(self, request):
+            if request.META['REMOTE_ADDR'] in BLOCKED_IPS:
+                return http.HttpResponseForbidden('<h1>Forbidden</h1>')
+            return None
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
