@@ -36,6 +36,8 @@ INSTALLED_APPS = [
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+BLOCKED_IPS = env('BLOCKED_IPS')
+ALLOWED_IPS = env('ALLOWED_IPS')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -45,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'IpBlock.ip_blocking.BlockedIpMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
