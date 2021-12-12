@@ -47,9 +47,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     #'blacklist.middleware.BlacklistMiddleware',
+    'config.middleware.ip_blocked.BlockedIpMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'config.middleware.ip_blocked.BlockedIpMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
