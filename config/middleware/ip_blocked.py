@@ -13,8 +13,8 @@ class BlockedIpMiddleware:
         else:
             ip = request.META.get('REMOTE_ADDR')
         #.
-        ip = ip[:ip.rfind('.')]
-        ip = ip[:ip.rfind('.')]
+        #ip = ip[:ip.rfind('.')]
+        #ip = ip[:ip.rfind('.')]
         if ip in settings.BLOCKED_IPS: # request.META['REMOTE_ADDR']
             return http.HttpResponseForbidden('<h1>Forbidden</h1>')
         
