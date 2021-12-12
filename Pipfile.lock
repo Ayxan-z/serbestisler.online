@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d187c40413d32b69484269de3247d46c37980397df887c87b9172566119a3826"
+            "sha256": "9db42e26357237e310ec59d55f130c84f537c2f0faff224b1ba65fe80839208c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,14 +70,6 @@
             ],
             "index": "pypi",
             "version": "==1.9.8"
-        },
-        "django-blacklist": {
-            "hashes": [
-                "sha256:49c766e12ae2816f42f834b8f1b97b381068a296dec910859a33676d1748f485",
-                "sha256:addd5907feca9ef336a3b7051aaf81fe1a964fa94026064c95e1bc68c5fb4876"
-            ],
-            "index": "pypi",
-            "version": "==0.6.1"
         },
         "django-ckeditor": {
             "hashes": [

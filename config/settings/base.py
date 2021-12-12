@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'crispy_forms',
     'storages',
-    'blacklist'
+    #'blacklist'
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'blacklist.middleware.BlacklistMiddleware',
+    #'blacklist.middleware.BlacklistMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'config.middleware.ip_blocked.BlockedIpMiddleware'

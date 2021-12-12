@@ -16,7 +16,6 @@ django-storages = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
 gunicorn = "*"
-django-blacklist = "*"
 
 [dev-packages]
 
