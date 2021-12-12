@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'crispy_forms',
     'storages',
+    'blacklist'
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -45,9 +46,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'blacklist.middleware.BlacklistMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'config.middleware.ip_blocked.BlockedIpMiddleware'
+    #'config.middleware.ip_blocked.BlockedIpMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -116,7 +118,6 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 LOGIN_REDIRECT_URL = '/'
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
