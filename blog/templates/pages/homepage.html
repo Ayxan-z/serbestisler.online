@@ -37,7 +37,7 @@
     {{article.arrangement_date|timesince}} əvvəl paylaşıldı<br>
     Hazırlayan: <a href="{% url 'profile' username=article.author.username %}">{{article.author.username}}</a>
   </small></p>
-  <a href="{{article.files.url}}" style="color:rgb(0, 155, 0); margin-left: 1.1rem; margin-bottom: 1rem; margin-top: 6px;" download><i class="fa fa-download fa-lg"></i></a>
+  <!-- <a href="{{article.files.url}}" style="color:rgb(0, 155, 0); margin-left: 1.1rem; margin-bottom: 1rem; margin-top: 6px;" download><i class="fa fa-download fa-lg"></i></a> -->
 </div>
 {% empty %}
 <p>Fayl tapılmadı</p>
