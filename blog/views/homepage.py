@@ -2,6 +2,7 @@ from django.shortcuts import render
 from blog.models import ArticleModel
 from django.core.paginator import Paginator
 from django.db.models import Q
+#from IpBlock.ip_blocking import BlockedIpMiddleware
 
 def homePage(request):
     search = request.GET.get('search')
@@ -19,4 +20,4 @@ def homePage(request):
     return render(request, 'pages/homepage.html', context={
         'articles': paginator.get_page(page)
     })
-
+    

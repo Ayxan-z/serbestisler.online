@@ -12,12 +12,8 @@ class BlockedIpMiddleware:
       # middleware) are called.
 
       # if request.META['REMOTE_ADDR'] in settings.BLOCKED_IPS:
-      
-      ip = request.META['REMOTE_ADDR']
-      ip = ip[:ip.find('.')]
-      if ip in settings.ALLOWED_IPS: # request.META['REMOTE_ADDR'] in settings.BLOCKED_IPS
-        return self.get_response(request)
-    
-      return http.HttpResponseForbidden('<h1>Forbidden</h1>')
+      BLOCKED_IPS = ['46.228.176.95']
+      if request.META['REMOTE_ADDR'] in BLOCKED_IPS:
+         return http.HttpResponseForbidden('<h1>Forbidden</h1>')
 
-      
+      return self.get_response(request)

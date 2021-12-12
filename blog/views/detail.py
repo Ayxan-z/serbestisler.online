@@ -1,6 +1,5 @@
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
-from IpBlock.ip_blocking import BlockedIpMiddleware
 from blog.models import ArticleModel
 from blog.forms import CommentAddModelForm
 from django.views import View
@@ -9,7 +8,6 @@ import logging
 logger = logging.getLogger('article_read')
 
 class DetailView(View):
-    BlockedIpMiddleware.__call__
     http_method_names = ['get', 'post']
     add_comment_form = CommentAddModelForm
     
