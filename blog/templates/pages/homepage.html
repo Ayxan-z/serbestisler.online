@@ -2,7 +2,6 @@
 
 {% block title %} Sərbəst İşlər {% endblock title %}
 
-
 {% block content %}
 <form action="{% url 'homepage' %}" class="form-inline my-2 mb-3">
   <input class="form-control mr-sm-2" type="search" name="search" placeholder="Axtar" style="width: 210px;">
@@ -39,6 +38,7 @@
   </small></p>
   <!-- <a href="{{article.files.url}}" style="color:rgb(0, 155, 0); margin-left: 1.1rem; margin-bottom: 1rem; margin-top: 6px;" download><i class="fa fa-download fa-lg"></i></a> -->
 </div>
+
 {% empty %}
 <p>Fayl tapılmadı</p>
 {% endfor %}
