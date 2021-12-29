@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'crispy_forms',
     'storages',
+    'mathfilters',
     #'blacklist'
 ]
 
